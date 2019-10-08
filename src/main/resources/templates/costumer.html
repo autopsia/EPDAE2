@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" >
+<head>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Listado de Users</title>
+</head>
+<body>
+
+
+<div class="container">
+    <h3>Users</h3>
+    <div class="col-md-12">
+        <a th:href="@{/users/add}" class="btn btn-primary">Agregar user</a>
+    </div>
+
+    <div th:switch="users" >
+        <div th:case="*">
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th scope="col">iD</th>
+                    <th scope="col">password</th>
+                    <th scope="col">Fecha Registro</th>
+                    <th scope="col">Estado</th>
+                    <th scope="col"></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="user: ${users}">
+                    <th scope="row" th:text="${user.userid}" ></th>
+                    <td id="pass" th:text="${user.password}"></td>
+                    <td th:text="${user.registerDate}"></td>
+                    <td th:text="${user.loginStatus}"></td>
+
+                    <td class="text-right">
+                        <div class="btn-group">
+
+                            <a th:href="@{/users/edit/{id}
+                                    (id=${user.userid})}"
+                               class="btn btn-primary btn-sm">Editar</a>
+
+                            <a th:href="@{/users/delete/{id}
+                                (id=${user.userid})}"
+                               class="btn btn-danger btn-sm">Eliminar</a>
+
+                        </div>
+                    </td>
+
+                </tr>
+                </tbody>
+
+            </table>
+
+
+        </div>
+
+    </div>
+
+
+</div>
+
+<script>
+    $(document).ready(function(){
+            $("#1").replaceWith("******");
+    });
+</script>
+
+</body>
+</html>

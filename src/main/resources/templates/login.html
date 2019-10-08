@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" >
+<head>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Listado de Alumnos</title>
+</head>
+<body>
+
+
+<div class="container">
+    <h3>Agregar Alumnos</h3>
+
+    <div>
+        <form action="#" th:action="@{/customers/login}" th:object="${customer}" method="post">
+
+            <div class="form-group">
+                <label for="email">id</label>
+                <input type="text" class="class-controller form-control"
+                       id="email" placeholder="Ingrese id"
+                       th:field="*{email}">
+            </div>
+            <div class="form-group">
+                <label for="password">password</label>
+                <input type="password" class="class-controller form-control"
+                       id="password" placeholder="Ingrese nombre"
+                       th:field="*{password}">
+            </div>
+            <button class="btn btn-primary btn-lg btn-block">Guardar</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>
