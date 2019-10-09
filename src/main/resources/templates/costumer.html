@@ -9,45 +9,55 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <title>Listado de Users</title>
+    <title>Listado de Clientes</title>
 </head>
 <body>
 
 
 <div class="container">
-    <h3>Users</h3>
+    <h3>costumers</h3>
     <div class="col-md-12">
-        <a th:href="@{/users/add}" class="btn btn-primary">Agregar user</a>
+        <a th:href="@{/costumers/add}" class="btn btn-primary">Agregar Cliente</a>
     </div>
 
-    <div th:switch="users" >
+    <div th:switch="costumers" >
         <div th:case="*">
             <table class="table table-striped">
                 <thead>
                 <tr>
                     <th scope="col">iD</th>
-                    <th scope="col">password</th>
-                    <th scope="col">Fecha Registro</th>
-                    <th scope="col">Estado</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Password</th>
+                    <th scope="col">Fecha registro</th>
+                    <th scope="col">Login Status</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Direccion</th>
+                    <th scope="col">Tarjeta Credito</th>
+                    <th scope="col">Balance de cuenta</th>
                     <th scope="col"></th>
                 </tr>
                 </thead>
                 <tbody>
-                <tr th:each="user: ${users}">
-                    <th scope="row" th:text="${user.userid}" ></th>
-                    <td id="pass" th:text="${user.password}"></td>
-                    <td th:text="${user.registerDate}"></td>
-                    <td th:text="${user.loginStatus}"></td>
+                <tr th:each="costumer: ${costumers}">
+                    <th scope="row" th:text="${costumer.userid}" ></th>
+                    <td th:text="${costumer.email}"></td>
+                    <td id="pass" th:text="${costumer.password}"></td>
+                    <td th:text="${costumer.registerDate}"></td>
+                    <td th:text="${costumer.loginStatus}"></td>
+                    <td th:text="${costumer.costumerName}"></td>
+                    <td th:text="${costumer.address}"></td>
+                    <td th:text="${costumer.creditCardInfo}"></td>
+                    <td th:text="${costumer.accountBalance}"></td>
 
                     <td class="text-right">
                         <div class="btn-group">
 
-                            <a th:href="@{/users/edit/{id}
-                                    (id=${user.userid})}"
+                            <a th:href="@{/costumers/edit/{id}
+                                    (id=${costumer.userid})}"
                                class="btn btn-primary btn-sm">Editar</a>
 
-                            <a th:href="@{/users/delete/{id}
-                                (id=${user.userid})}"
+                            <a th:href="@{/costumers/delete/{id}
+                                (id=${costumer.userid})}"
                                class="btn btn-danger btn-sm">Eliminar</a>
 
                         </div>

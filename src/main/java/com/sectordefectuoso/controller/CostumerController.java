@@ -1,7 +1,9 @@
 package com.sectordefectuoso.controller;
 
 import com.sectordefectuoso.model.Costumer;
+import com.sectordefectuoso.model.User;
 import com.sectordefectuoso.service.CostumerService;
+import com.sectordefectuoso.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,11 +17,14 @@ import java.util.List;
 public class CostumerController implements GenericController<Costumer, String>{
     @Autowired
     CostumerService costumerService;
+    //UserService userService;
 
     @GetMapping("/costumers")
     public String getList(Model model) {
         List<Costumer> costumers = costumerService.findAll();
+        //List<User> users = userService.findAll();
         model.addAttribute("costumers", costumers);
+        //model.addAttribute("users", users);
         return "costumer";
     }
 

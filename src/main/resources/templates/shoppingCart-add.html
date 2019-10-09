@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Agregar Alumnos</title>
+</head>
+<body>
+
+
+<div class="container">
+    <h3>Agregar Alumnos</h3>
+
+    <div>
+
+        <form action="#" method="post"
+              th:object="${shoppingCart}"
+              th:action="@{/shoppingCarts/save}"
+        >
+
+            <div class="form-group">
+                <label for="cartId">cartId</label>
+                <input type="text" class="class-controller"
+                       id="cartId" placeholder="ingrese el cartId"
+                       th:field="*{cartId}"
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="productId">productId</label>
+                <input type="text" class="class-controller"
+                       id="productId" placeholder="ingrese productId"
+                       th:field="*{productId}"
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="quantity">quantity</label>
+                <input type="text" class="class-controller"
+                       id="quantity" placeholder="ingrese quantity"
+                       th:field="*{quantity}"
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="dateAdd">dateAdd</label>
+                <input type="date" class="class-controller"
+                       id="dateAdd" placeholder="ingrese dateAdd"
+                       th:field="*{dateAdd}"
+                >
+            </div>
+
+            <button type="submit" class="btn btn-primary">
+                Agregar a carrito
+            </button>
+
+
+        </form>
+
+
+    </div>
+
+
+</div>
+
+
+</body>
+</html>

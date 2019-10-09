@@ -18,7 +18,13 @@
     <h3>Agregar Cliente</h3>
 
     <div>
-        <form action="#" th:action="@{/costumers/save}" th:object="${costumer}" method="post">
+        <form action="#" th:action="@{/costumers/update/{id} (cartId=${costumer.userid})}" th:object="${costumer}" method="post">
+            <div class="form-group">
+                <label for="userid">id</label>
+                <input type="text" class="class-controller form-control"
+                       id="userid" placeholder="Ingrese email"
+                       th:field="*{userid}" disabled>
+            </div>
 
             <div class="form-group">
                 <label for="email">password</label>

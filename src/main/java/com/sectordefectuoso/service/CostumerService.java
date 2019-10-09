@@ -12,7 +12,7 @@ public class CostumerService implements GenericService<Costumer, String> {
     List<Costumer> costumers = new ArrayList<>(
             Arrays.asList(
                     new Costumer(
-                            3, "1", "","oscar", "asd", "1",  "3411241", 0.2d)
+                             "1", "","oscar", "asd", "1",  "3411241", 0.2d)
             )
     );
 

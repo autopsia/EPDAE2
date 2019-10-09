@@ -14,17 +14,7 @@ public class UserService implements GenericService<User, String> {
     List<User> users = new ArrayList<>(
             Arrays.asList(
                     new User(
-                            1, "xdd", "logged"),
-                    new User(
-                            1, "xdd", "logged"),
-                    new User(
-                            1, "xdd", "logged"),
-                    new User(
-                            1, "xdd", "logged"),
-                    new User(
-                            1, "xdd", "logged"),
-                    new User(
-                            1, "xdd", "logged")
+                             "xdd", "logged")
             )
     );
 

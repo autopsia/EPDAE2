@@ -7,8 +7,6 @@ import lombok.NoArgsConstructor;
 
 import java.util.Date;
 
-@NoArgsConstructor
-@AllArgsConstructor
 @Data
 public class ShoppingCart {
     private String cardId;
@@ -16,4 +14,13 @@ public class ShoppingCart {
     private int quantity;
     @JsonFormat(pattern="dd/MM/yyyy")
     private Date registerDate = new Date();
+
+    public ShoppingCart() {
+    }
+
+    public ShoppingCart(String cardId, String productId, int quantity) {
+        this.cardId = cardId;
+        this.productId = productId;
+        this.quantity = quantity;
+    }
 }

@@ -6,8 +6,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.Date;
+import java.util.concurrent.atomic.AtomicInteger;
 
-@NoArgsConstructor
 @AllArgsConstructor
 @Data
 public class User {
@@ -17,11 +17,21 @@ public class User {
     @JsonFormat(pattern="dd/MM/yyyy")
     private Date registerDate = new Date();
 
+    private static boolean estalleno;
+
+    public User() {
+    }
     public User(int userid, String password, String loginStatus) {
         this.userid = userid;
         this.password = password;
         this.loginStatus = loginStatus;
     }
+    public User( String password, String loginStatus) {
+        this.userid = getUserid();
+        this.password = password;
+        this.loginStatus = loginStatus;
+    }
+
 
     public int getUserid() {
         return userid;
